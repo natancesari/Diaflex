@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiaFlex - Naturalne wsparcie organizmu</title>
+    <style>
+        /* Reset básico e tipografia */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #eaf1fb; /* Azul bem claro retirado da imagem */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Top Bar de Advertorial (Importante para o Google Ads) */
+        .advertorial-bar {
+            background-color: #f1f1f1;
+            text-align: center;
+            font-size: 12px;
+            padding: 5px;
+            color: #777;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header da Página */
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            color: #ba1c22; /* Vermelho do produto */
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Área principal de conversão (Hero Section) */
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .product-image-container {
+            flex: 1 1 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            background: #f8fbff;
+        }
+
+        /* Estilo para a imagem que você vai inserir */
+        .product-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .offer-container {
+            flex: 1 1 400px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .offer-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .highlight-text {
+            color: #ba1c22;
+        }
+
+        .bullet-points {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .bullet-points li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .bullet-points li::before {
+            content: '✔';
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Seção de Preços */
+        .price-box {
+            background-color: #fff9f0;
+            border: 2px dashed #f39c12;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.2rem;
+        }
+
+        .new-price {
+            color: #ba1c22;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Botão de Compra */
+        .cta-button {
+            display: block;
+            text-align: center;
+            background: linear-gradient(180deg, #f9b161 0%, #ee8a31 100%); /* Laranja retirado da landing page original */
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 18px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(238, 138, 49, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(238, 138, 49, 0.6);
+            background: linear-gradient(180deg, #fcbc73 0%, #f39c12 100%);
+        }
+
+        .cod-notice {
+            text-align: center;
+            font-size: 1rem;
+            color: #27ae60;
+            font-weight: bold;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        /* Footer com Disclaimers para Google Ads */
+        footer {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #bdc3c7;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+
+        .disclaimer {
+            margin-top: 20px;
+            border-top: 1px solid #7f8c8d;
+            padding-top: 20px;
+            text-align: justify;
+        }
+
+        /* Animação do botão */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .hero-section {
+                flex-direction: column;
+            }
+            .product-image-container {
+                padding: 20px;
+            }
+            .offer-container {
+                padding: 25px 20px;
+            }
+            .cta-button {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Aviso para o Google saber que é um material publicitário -->
+    <div class="advertorial-bar">
+        Materiał promocyjny - Oferta limitowana
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>DiaFlex</h1>
+            <p>Zadbaj o siebie w naturalny sposób z dedykowanym wsparciem.</p>
+        </header>
+
+        <main class="hero-section">
+            <div class="product-image-container">
+                <!-- COLOQUE A IMAGEM DO PRODUTO AQUI NO VISUAL STUDIO -->
+                <img src="produto.png" alt="DiaFlex Produkt">
+              
+            </div>
+
+            <div class="offer-container">
+                <h2 class="offer-title">Wsparcie jakości życia z <span class="highlight-text">DiaFlex</span></h2>
+                
+                <ul class="bullet-points">
+                    <li>Oryginalna, wysokiej jakości formuła.</li>
+                    <li>W 100% bezpieczny i naturalny skład.</li>
+                    <li>Wygodna płatność przy odbiorze paczki (COD).</li>
+                </ul>
+
+                <div class="price-box">
+                    <span class="discount-badge">Oszczędzasz 50%</span>
+                    <p class="old-price">Cena regularna: 310 PLN</p>
+                    <p class="new-price">Tylko: 155 PLN</p>
+                </div>
+
+                <a href="https://dio4y.doctorbuyer.com/l/?sub1={gclid}" class="cta-button">
+                    ZAMÓW TERAZ I ZAPŁAĆ PRZY ODBIORZE
+                </a>
+                
+                <div class="cod-notice">
+                    📦 Płatność przy odbiorze - 100% Bezpieczeństwa
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div>
+                <a href="#">Polityka Prywatności</a> | 
+                <a href="#">Regulamin</a> | 
+                <a href="#">Kontakt</a>
+            </div>
+            
+            <div class="disclaimer">
+                <strong>Oświadczenie Medyczne i Prawne (Zgodne z polityką Google Ads):</strong><br>
+                Informacje zawarte na tej stronie mają charakter wyłącznie edukacyjny i promocyjny. DiaFlex jest suplementem diety i nie jest przeznaczony do diagnozowania, leczenia, zapobiegania ani zwalczania jakiejkolwiek choroby. Suplementy diety nie mogą być stosowane jako substytut zróżnicowanej diety. Przed rozpoczęciem stosowania jakiegokolwiek suplementu, zwłaszcza w przypadku problemów zdrowotnych, zalecamy skonsultowanie się z lekarzem. Wyniki mogą się różnić w zależności od indywidualnych predyspozycji organizmu. Niniejsza strona stanowi materiał reklamowy (advertorial).
+            </div>
+            <p style="margin-top: 15px;">&copy; 2024 DiaFlex. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
